@@ -1,0 +1,63 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<title>21</title>
+
+
+
+<script>
+
+function randomOne(){
+   var numOne = Math.floor(Math.random() * 13;
+   document.getElementById("output").innerHTML = "Your first card is" + numOne;
+}
+
+function randomTwo(){
+   var numTwo = Math.floor(Math.random() * 13;   
+   document.getElementById("output").innerHTML = "Your second card is" + numTwo;
+}
+    
+function randomThree(){
+   var numThree = Math.floor(Math.random() * 13;   
+   document.getElementById("output").innerHTML = "Your third card is" + numTwo;
+}
+
+function twentyOne() {
+
+    var cardOne = document.getElementById("cardA").value;
+    var cardTwo = document.getElementById("cardB").value;
+    var cardThree = document.getElementById("cardC").value;
+    var sum = 0;
+    var sum = cardOne + cardTwo + cardThree;
+
+        if (sum <= 21) {
+            output = sum;
+        }
+         else {
+        output = "bust";
+         }
+
+         document.getElementById("output").innerHTML = output;
+}
+</script>
+</head>
+
+<body>
+        <h1>Let's Play Blackjack!</h1>
+<h3>Try to get the score closest to 21, without going over!</h3>
+
+<h3>Get Card One</h3>
+    <button type="button" onclick="randomOne()">What's My Number?</button>
+   
+
+<h3>Get Card Two</h3>
+    <button type="button" onclick="randomTwo()">What's My Number?</button>
+    
+<h4> Would you like to add another card to your hand?</h4>   
+<button type="button" onclick="randomThree()">Yes</button> <br>
+<button type="button" onclick="Okay! Click below to see your score.">No</button> <br>
+<button type="button" onclick="twentyOne()">Try It</button>
+<div id="output"></div>
+</body>
+</html>
