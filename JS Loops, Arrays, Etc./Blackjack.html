@@ -9,11 +9,15 @@
 
 <script>
 
+var numOne = Math.floor(Math.random() * 13) + 1 ;
+var numTwo = Math.floor(Math.random() * 13) + 1; 
+randomOne(); 
+
 function randomOne(){
-   var numOne = Math.floor(Math.random() * 13) + 1 ;
-   var numTwo = Math.floor(Math.random() * 13) + 1;   
-   var total = numOne + numTwo;
-   document.getElementById("output1").innerHTML = "Your first card is " + numOne + " and your second card is " + numTwo + "."; 
+    document.getElementById("output1").innerHTML = "Your first card is " + numOne + ". Your second card is " + numTwo + "."; 
+
+
+   
 }
 </script>
 
@@ -24,13 +28,17 @@ function randomOne(){
 </div>
 
 <script>
+
+var numThree = Math.floor(Math.random() * 13) +1;
+randomThree(); 
+
 function randomThree(){
-   var numThree = Math.floor(Math.random() * 13) +1;  
+    
    document.getElementById("out").innerHTML = "Your third card is " + numThree + "."; 
 }
 
 function noNum() {
-    document.getElementById("out").innerHTML = "Okay! We won't add any more cards to your hand. Let's see if you won!"
+    document.getElementById("out").innerHTML = "Okay! We won't add any more cards to your hand. Your sum is " + sum;
 }
 </script>
 
@@ -41,16 +49,17 @@ function noNum() {
 </div>
 
 <script>
-function twentyOne(numOne, numTwo, numThree) {
-    var sum = 0;
-    var sum = numOne + numTwo + numThree;
 
+     var sum = numOne + numTwo + numThree;
+     twentyOne();
+
+function twentyOne(numOne, numTwo, numThree) {
         if (sum <= 21) {
-            greeting = "You won! Your sum is" + sum + ".";
+            greeting = "You won! Your sum is " + sum + ".";
         }
 
          else {
-            greeting = "You lost! You went over 21!" ;
+            greeting = "You lost - you went over 21! Your total was " + sum;
          }
 
          document.getElementById("output").innerHTML = greeting;     
