@@ -3,17 +3,89 @@
 <head>
 <meta charset="utf-8">
 <title>Canvas, Video, Audio</title>
+<link rel="stylesheet" href="canvas.css">
 </head>
 <body>
-<canvas id="myCanvas" width="900" height="500" style="border:4px dashed blue;">
-</canvas>
+<canvas id="myCanvas" width="675" height="150" style="border:4px dashed blue; background: whitesmoke;">
+        </canvas> 
+  
+<div id="buttons"> 
+  <button class="button" onclick="playPause()">Play/Pause</button> 
+  <button class="button" onclick="replay()">Replay</button>
+  <button class="button" onclick="makeBig()">Make Screen Bigger</button>
+  <button class="button" onclick="makeNormal()">Normal</button>
+<br>
+<video id="rain" width="690" height="auto">
+<source src="rain.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+</video>
+<br>
+<p class="info">Use these commands to control ONLY the Audio.</p>
+<audio id="sound" width="200" height="auto" controls>
+<source src="rain.wav" type="video/mp4">
+        Your browser does not support the video tag.
+ </audio>
+
+ <p class="info"></p>Video courtesy of <a href="http://www.orangehd.com/heavy-rain-falling/">OrangeHD.com</a></p>  
+ <p class="info"></p>Audio courtesy of <a href="https://freesound.org/people/rasunter255/sounds/416227/">Freesound.org</a></p>  
+
 <script>
-        var c = document.getElementById("myCanvas");
-        var ctx = c.getContext("2d");
-        ctx.beginPath();
-        ctx.arc(95,50,40,0,2*Math.PI);
-        ctx.stroke();
-        </script> 
+var c = document.getElementById("myCanvas");
+var ctx = c.getContext("2d");
+ctx.font = "50px Verdana";
+// Create gradient
+var gradient = ctx.createLinearGradient(0, 0, c.width, 0);
+gradient.addColorStop("0.1", "blue");
+gradient.addColorStop("0.3", "teal");
+gradient.addColorStop("0.5", "turquoise");
+gradient.addColorStop("0.7", "lightblue");
+gradient.addColorStop("0.9", "navy");
+
+
+// Fill with gradient
+ctx.fillStyle = gradient;
+ctx.fillText("Rainy Day", 200, 50);
+
+var c = document.getElementById("myCanvas");
+var ctx = c.getContext("2d");
+ctx.font = "20px Verdana";
+ctx.fillText("Use the buttons below the video to control BOTH audio and video.", 5,90);
+ctx.fillText("You can also use your TAB and ENTER keys to make a selection.", 5 ,125);
+
+
+
+
+
+var myVideo = document.getElementById("rain"); 
+var myAudio = document.getElementById("sound"); 
+
+function playPause() { 
+  if (myVideo.paused) {
+    myVideo.play(); 
+    myAudio.play();
+}
+  else {
+    myVideo.pause(); 
+    myAudio.pause();
+  }
+} 
+
+function replay() { 
+    myVideo.currentTime = 0; 
+    myVideo.play();
+    myAudio.currentTime = 0; 
+    myAudio.play();
+} 
+
+function makeBig() { 
+    myVideo.width = 900; 
+} 
+
+function makeNormal() { 
+    myVideo.width = 600; 
+} 
+
+</script> 
 </body>
 </html>
 
