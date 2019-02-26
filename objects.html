@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p id="demo"></p>
+<p>If found, please return to:</p>
+<p id="output"></p>
+<p id="add"></p>
+
+
+<script>
+var animal = new Object();
+animal.type = "cat";
+animal.gender = "male";
+animal.color = "orange";
+animal.eyeColor = "green"; 
+
+document.getElementById("demo").innerHTML =
+"I have a " + animal.gender + " " + animal.type +  " that is " + animal.color + " and has " + animal.eyeColor + " eyes who is missing.";
+
+
+var txt = "";
+var person = {name:"Tessa Brown", address:"100 Rainbow Road", phone:"555-5555"}; 
+var x;
+for (x in person) {
+  txt += person[x] + " <br>";
+}
+document.getElementById("output").innerHTML = txt;
+
+person.age = 23;
+document.getElementById("add").innerHTML =
+person.name + " is " + person.age + ".";
+</script>
+
+</body>
+</html>
