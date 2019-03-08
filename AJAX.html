@@ -1,32 +1,63 @@
 <!DOCTYPE html>
 <html>
-<body>
+  <head>
+    <meta charset="utf-8">
 
-<div id="id01"></div>
+    <title>Favorite Foods with AJAX</title>
+  
+  </head>
 
-<script>
-var xmlhttp = new XMLHttpRequest();
-var url = "https://github.com/Tessa-Brown/CIT261/blob/master/myTutorials.txt";
+  <body>
 
-xmlhttp.onreadystatechange = function() {
-  if (this.readyState == 4 && this.status == 200) {
-    var myArr = JSON.parse(this.responseText);
-    myFunction(myArr);
-  }
-};
-xmlhttp.open("GET", url, true);
-xmlhttp.send();
+      <header>
+        <h2> Click below to see my favorite foods! </h2>
+        
+      </header>
 
-function myFunction(arr) {
-  var out = "";
-  var i;
-  for(i = 0; i < arr.length; i++) {
-    out += '<a href="' + arr[i].url + '">' + 
-    arr[i].display + '</a><br>';
-  }
-  document.getElementById("id01").innerHTML = out;
-}
-</script>
+      <section>
+          <button type="button" id="change" onclick="showFoods()">Click Me!</button>
+      </section>
 
-</body>
+    <script>
+    var section = document.querySelector('section');
+    var requestURL = 'https://github.com/Tessa-Brown/CIT261/foods.json';
+    var request = new XMLHttpRequest();
+    request.open('GET', requestURL);
+    request.responseType = 'json';
+    request.send();
+    request.onload = function() {
+      var foods = request.response;
+      showFoods(foods);
+    
+    function showFoods(jsonObj) {
+      var foods = jsonObj['foods'];
+      for(var i = 0; i < foods.length; i++) {
+        var myArticle = document.createElement('article');
+        var myH2 = document.createElement('h2');
+        var myPara1 = document.createElement('p');
+        var myPara2 = document.createElement('p');
+        var myPara3 = document.createElement('p');
+        var myList = document.createElement('ul');
+        myH2.textContent = foods[i].name;
+        myPara1.textContent = 'Name :' + heroes[i].name;
+        myPara2.textContent = 'Type: ' + heroes[i].type;
+        myPara3.textContent = 'Varieties:';
+        var superPowers = foods[i].varieties;
+        for(var j = 0; j < varieties.length; j++) {
+          var listItem = document.createElement('li');
+          listItem.textContent = varieties[j];
+          myList.appendChild(listItem);
+        }
+        myArticle.appendChild(myH2);
+        myArticle.appendChild(myPara1);
+        myArticle.appendChild(myPara2);
+        myArticle.appendChild(myPara3);
+        myArticle.appendChild(myList);
+
+        section.appendChild(myArticle);
+      }
+    }
+    
+    </script>
+  </body>
 </html>

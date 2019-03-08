@@ -1,0 +1,34 @@
+{
+  "foods" : [
+    {
+      "name" : "Strawberries",
+      "type" : "Fruit",
+      "color" : "Red",
+      "varieties" : [
+        "Alba",
+        "Allstar",
+        "Cabot"
+      ]
+    },
+    {
+      "name" : "Steak",
+      "type" : "Meat",
+      "color" : "Pink (when cooked correctly)",
+      "varieties" : [
+        "NY Strip",
+        "Sirloin",
+        "Filet Mignon"
+      ]
+    },
+    {
+      "name" : "Cucumbers",
+      "type" : "Veggie",
+      "color" : "Green",
+      "varieties" : [
+        "Hothouse (English)",
+        "Armenian",
+        "Persian",
+      ]
+    }
+  ]
+}
