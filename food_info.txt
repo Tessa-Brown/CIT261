@@ -1,0 +1,4 @@
+<h1>My Favorite Foods</h1>
+<p>My first favorite food is strawberries. I love their sweet taste.</p>
+<p>My second favorite food is steak. I like it medium with lots of pink!</p>
+<p>My third favorite food is cucumbers. I eat them by themselves all the time, but I love them in salads as well! </p>
