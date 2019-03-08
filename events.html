@@ -1,0 +1,34 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<title>JavaScript Events</title>
+<link rel="stylesheet" href="events.css">
+</head>
+<body>
+<p id="demo">Waiting!</p>
+<img id="puppy" src="puppy.jpg" onload="myFunction()" onmouseover="bigImg(this)" onmouseout="normalImg(this)">
+
+
+
+<script>
+document.getElementById("puppy").onload = function() {myFunction()};
+
+function myFunction() {
+  document.getElementById("demo").innerHTML = "Woof woof!";
+}
+
+function bigImg(x) {
+  x.style.height = "600px";
+  x.style.width = "auto";
+}
+
+function normalImg(x) {
+    x.style.height = "200px";
+    x.style.width= "auto";
+}
+
+</script>
+
+</body>
+</html>

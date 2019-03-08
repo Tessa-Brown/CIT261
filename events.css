@@ -1,0 +1,12 @@
+p {
+    font-size: 2rem;
+    color: blue;
+    animation: move 2s;
+    transition: 
+
+}
+
+@keyframes move {
+    from: {left: 0px}
+    to: {left: 20px}
+}
