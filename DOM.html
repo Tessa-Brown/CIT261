@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<title>DOM Manipulation</title>
+</head>
+<body>
+<h2>Shopping List for Sunday</h2>
+ <ul id="shoppingList">
+  <li>Chicken</li>
+  <li>Salad</li>
+  <li>Rolls</li>
+</ul>
+
+We should probably get something for dessert so our guests don't hate us.<br><br>
+<button onclick="dessert()">Add Brownies to the list!</button><br><br>
+
+I need more meat! Can we keep them together on the list so I don't have to backtrack in the store?<br>
+<br><button onclick="addMeat()">Add item below chicken</button><br><br>
+
+Actually! I think I just want to make burgers for dinner. I don't need chicken!<br>
+<br><button onclick="removeRolls()">Remove chicken from list</button><br><br>
+
+<script>
+function dessert() {
+  var node = document.createElement("LI");
+  var textnode = document.createTextNode("Brownies");
+  node.appendChild(textnode);
+  document.getElementById("shoppingList").appendChild(node);
+}
+
+function addMeat() {
+  var newItem = document.createElement("LI");
+  var textnode = document.createTextNode("Ground Beef");
+  newItem.appendChild(textnode);
+
+  var list = document.getElementById("shoppingList");
+  list.insertBefore(newItem, list.childNodes[2]);
+}
+
+function removeRolls() {
+  var list = document.getElementById("shoppingList");
+  list.removeChild(list.childNodes[1]);
+}
+</script>
+
+</body>
+</html>
