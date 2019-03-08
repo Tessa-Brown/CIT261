@@ -10,12 +10,11 @@
   <body>
 
       <header>
-        <h2> Click below to see my favorite foods! </h2>
-        
+        <h2> Tessa's Favorite Foods!</h2>
       </header>
 
       <section>
-          <button type="button" id="change" onclick="showFoods()">Click Me!</button>
+          
       </section>
 
     <script>
@@ -39,8 +38,8 @@
         var myPara3 = document.createElement('p');
         var myList = document.createElement('ul');
         myH2.textContent = foods[i].name;
-        myPara1.textContent = 'Name :' + heroes[i].name;
-        myPara2.textContent = 'Type: ' + heroes[i].type;
+        myPara1.textContent = 'Name :' + foods[i].name;
+        myPara2.textContent = 'Type: ' + foods[i].type;
         myPara3.textContent = 'Varieties:';
         var superPowers = foods[i].varieties;
         for(var j = 0; j < varieties.length; j++) {
