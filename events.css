@@ -1,12 +1,18 @@
-p {
+
+#myDIV {
+    border: 1px solid black;
+    background-color: teal;
+    width: 270px;
+    height: 100px;
+    overflow: auto;
+    text-align: center;
     font-size: 2rem;
-    color: blue;
-    animation: move 2s;
-    transition: 
-
-}
-
-@keyframes move {
-    from: {left: 0px}
-    to: {left: 20px}
-}
+  }
+  
+  #myDIV:hover {
+    background-color: pink;
+    width: 570px;
+    height: 100px;
+    padding: 100px;
+    border-radius: 50px;
+  }

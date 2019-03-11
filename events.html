@@ -6,16 +6,30 @@
 <link rel="stylesheet" href="events.css">
 </head>
 <body>
-<p id="demo">Waiting!</p>
+ 
+
+<div id="myDIV">
+<h4 id="demo">Waiting!</h4>
+</div> 
+<p>If you hover over the box above, it doesn't transition very gracefully. Try clicking the button below and then hovering over the box again!</p>
+<button onclick="change()">Change transitions with JavaScript</button>
+
+
+<h2> Mouse over the picture! </h2>
 <img id="puppy" src="puppy.jpg" onload="myFunction()" onmouseover="bigImg(this)" onmouseout="normalImg(this)">
 
-
+<p id="name" ontouchstart="name()">Touch this paragraph to name the puppy! (Will only work on a mobile device)</p>
 
 <script>
 document.getElementById("puppy").onload = function() {myFunction()};
 
 function myFunction() {
   document.getElementById("demo").innerHTML = "Woof woof!";
+}
+
+function change() {
+  document.getElementById("myDIV").style.WebkitTransition = "all 2s"; // Code for Safari 3.1 to 6.0
+  document.getElementById("myDIV").style.transition = "all 2s";     // Standard syntax
 }
 
 function bigImg(x) {
@@ -27,6 +41,15 @@ function normalImg(x) {
     x.style.height = "200px";
     x.style.width= "auto";
 }
+
+function name(){
+  document.getElementById("name").innerHTML = "This puppy's name is Bruce.";
+}
+
+
+document.addEventListener('puppy', function () {
+    console.log( "ready!" );
+});
 
 </script>
 
