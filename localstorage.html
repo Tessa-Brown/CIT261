@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<title>CIT261TestPage</title>
+</head>
+
+<body>
+<h1>Hello!</h1>
+ 
+Enter your name: <input type="text" id="name"><br>
+Enter your favorite color: <input type="text" id="color"><br>
+Enter your hometown: <input type="text" id="location"><br>
+<div id="result"></div>
+<button type="button" onclick="display()">Save my info!</button>
+
+ <script>
+
+ function display() {
+
+   var you = document.getElementById("name").value;
+   var col = document.getElementById("color").value;
+   var loc = document.getElementById("location").value;
+   
+  var array =[you, col, loc];
+
+    if (typeof(Storage) !== "undefined") {
+      localStorage.setItem("name", "Tessa");
+      localStorage.setItem("color", "blue");
+      localStorage.setItem("location", "Boise");
+      document.getElementById("result").innerHTML = "Hi " + array[0] + "! My name is " + localStorage.getItem("name") + ". Welcome to my web page!"
+      + " I'm glad you like the color " + array[1] + ". My favorite color is " + localStorage.getItem("color") + ". I am originally from " + localStorage.getItem("location") + 
+      " but " + array[2] + " sounds lovely!";
+  
+    } else {
+      document.getElementById("result").innerHTML = "Sorry, your browser does not support Web Storage...";
+    }
+  }
+   
+
+  </script>
+
+</body>
+</html>
