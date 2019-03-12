@@ -1,0 +1,14 @@
+
+#myDiv {
+    border: 1px solid black;
+    background-color: #008080;
+    width: 270px;
+    height: 100px;
+    overflow: auto;
+    text-align: center;
+    font-size: 2rem;
+  }
+  
+
+
+  

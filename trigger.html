@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<title>JavaScript Events</title>
+<link rel="stylesheet" href="trigger.css">
+</head>
+<body>
+<div id="myDiv">Hello World!</div>
+<button onclick="changeBG('myDiv','#FF00FF');">Pink</button>
+<button onclick="changeBG('myDiv','#800080');">Purple</button>
+<button onclick="changeBG('myDiv','#008080');">Original</button><br>
+<button onclick="getBigger('myDiv');">Make Div Bigger</button>
+<button onclick="getSmaller('myDiv');">Make Div Smaller</button>
+<button onclick="normal('myDiv');">Make Div Original Size</button>
+
+    <script>
+    function changeBG(el,clr) {
+        var elem = document.getElementById(el);
+        elem.style.transition = "background 1.0s linear 0s";
+        elem.style.background = clr;
+    }
+
+    function getBigger(el) {
+        var elem = document.getElementById(el);
+        elem.style.transition = "height 0.5s linear 0s, width 0.5s linear 0s";
+        elem.style.height = "500px";
+        elem.style.width = "500px";
+    }
+
+    function getSmaller(el) {
+        var elem = document.getElementById(el);
+        elem.style.transition = "height 0.5s linear 0s, width 0.5s linear 0s";
+        elem.style.height = "0px";
+        elem.style.width = "0px"
+    }
+
+    function normal(el) {
+        var elem = document.getElementById(el);
+        elem.style.transition = "height 0.5s linear 0s, width 0.5s linear 0s";
+        elem.style.height = "100px";
+        elem.style.width = "270px";
+    }
+
+    </script>
+
+</body>
+</html
