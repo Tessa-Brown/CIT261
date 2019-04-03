@@ -19,9 +19,8 @@
         request.responseType = 'json';
         request.send();
         request.onload = function() {
-          var data = request.response;
-          console.log(data);
-          var books = jsonData['volumeInfo'];
+          var books = request.response;
+          console.log(books);
 
             var myArticle = document.createElement('article');
             var title = document.createElement('h2');
