@@ -1,14 +1,7 @@
     function getBooks() { 
         var search = document.getElementById('search').innerHTML;
         var requestURL = "https://www.googleapis.com/books/v1/volumes?q=" + search + "&callback=handleResponse";
-        for (var i = 0; i < requestURL.items.length; i++) {
-          var item = requestURL.items[i];
-          // in production code, item.text should have the HTML entities escaped.
-          document.getElementById("content").innerHTML += "<br>" + item.volumeInfo.title;
-        }
-    }
-
-        /*var request = new XMLHttpRequest();
+        var request = new XMLHttpRequest();
         request.open('GET', requestURL);
         request.responseType = 'json';
         request.send();
@@ -17,7 +10,7 @@
           getBooks(data);
         }
        
-      /*  function getBooks(jsonData) {
+            function getBooks(jsonData) {
             var books = jsonData['volumeInfo'];
 
             var myArticle = document.createElement('article');
@@ -47,6 +40,6 @@
             myArticle.appendChild(price);
     
             section.appendChild(myArticle);
-          } */
+          } 
         }
     
