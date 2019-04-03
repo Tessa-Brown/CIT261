@@ -1,6 +1,5 @@
 <html>
   <head>
-    <script src="books.js"></script>
     <title>Books API Example</title>
   </head>
   <body>
@@ -9,5 +8,17 @@
   <button type="button" onclick="getBooks()"> Search </button>
     <div id="content"></div>
 
+
+    <script>
+      function getBooks() { 
+        var search = document.getElementById('search').innerHTML;
+        var requestURL = "https://www.googleapis.com/books/v1/volumes?q=" + search + "&callback=handleResponse";
+        for (var i = 0; i < requestURL.items.length; i++) {
+          var item = requestURL.items[i];
+          // in production code, item.text should have the HTML entities escaped.
+          document.getElementById("content").innerHTML += "<br>" + item.volumeInfo.title;
+        }
+    }
+    </script>
   </body>
 </html>
