@@ -1,18 +1,13 @@
 <html>
   <head>
+    <script src="books.js"></script>
     <title>Books API Example</title>
   </head>
   <body>
+   What books would you like to search for? <button type="button" id="search" onclick="getBooks()">
     <div id="content"></div>
-    <script>
-      function handleResponse(response) {
-      for (var i = 0; i < response.items.length; i++) {
-        var item = response.items[i];
-        // in production code, item.text should have the HTML entities escaped.
-        document.getElementById("content").innerHTML += "<br>" + item.volumeInfo.title;
-      }
-    }
-    </script>
-    <script src="https://www.googleapis.com/books/v1/volumes?q=harry+potter&callback=handleResponse"></script>
+
   </body>
 </html>
+
+/*key=AIzaSyCexe_0vl93BrFr5xjZ3uP1k3QBNGfYRFg
