@@ -1,63 +1,45 @@
 <html>
   <head>
-    <title>Books API Example</title>
+    <title>Harry Potter List</title>
+    <link rel="stylesheet" href="animations.css">
   </head>
   <body>
-   What books would you like to search for?<input type="text" id="search">
+        <img id="book1" src="book.png">
+   <div class="hello"><h1>Below is a list of Harry Potter Books by JK Rowling!</h1>
+   <h2>Make a list of the ones you still need to read!</h2></div>
    
-  <button type="button" onclick="getBooks()"> Search </button>
-    <div id="content"></div>
   
+   
+   <div class="small-container">
+        <h3 id="books">Books To Read:</h3>
+        <p id="lists">Hit Enter Key to Submit</p>
+        <form>
+    <input id="item" type="text">
+        </form>
 
-  <script>
-    function getBooks() { 
-        var section = document.querySelector('.content');
-        var search = document.getElementById('search').innerHTML;
-        var request = new XMLHttpRequest();
-        var requestURL = "https://www.googleapis.com/books/v1/volumes?q=" + search + "&callback=handleResponse";
-        request.open('GET', requestURL);
-        request.responseType = 'json';
-        request.send();
-        request.onload = function() {
-          var data = request.response;
-          showBooks(data)
-        }
+  <ul></ul>
+  
+  <button id="clear">Clear All</button>
+  </div><br><br>
 
-           function showBooks(jsonData) { 
-            var books = jsonData['items'];
-            for(var i = 0; i < 10; i++) {
+  <button type="button" id="text"
+  onclick="document.getElementById('content').style.fontSize = '2rem'">
+  Make text larger</button> 
+  <button type="button" id="text"
+  onclick="document.getElementById('content').style.fontSize = '1rem'">
+  Make text original size</button>
+  <button type="button" id="text"
+  onclick="document.getElementById('content').style.visibility = 'hidden'">
+  Hide Book Information</button> 
+  <button type="button" id="text"
+  onclick="document.getElementById('content').style.visibility = 'visible'">
+  Show Book Information</button>
+    <div id="content"></div>
+   
 
-            var myArticle = document.createElement('article');
-            var title = document.createElement('h2');
-            var authors = document.createElement('p');
-            var publisher = document.createElement('p');
-            var publishedDate = document.createElement('p');
-            var pages = document.createElement('p');
-            var averageRating = document.createElement('p');
-            var price = document.createElement('p');
-
-            title.textContent = books[i].volumeInfo.title;
-            authors.textContent = books[i].volumeInfo.authors;
-            publisher.textContent = books[i].volumeInfo.publisher;
-            publishedDate.textContent = books[i].volumeInfo.publishedDate;
-            pages.textContent = books[i].volumeInfo.pages;
-            averageRating.textContent = books[i].volumeInfo.averageRating;
-            price.textContent = books[i].volumeInfo.retailPrice;
-            
-        
-            myArticle.appendChild(title);
-            myArticle.appendChild(authors);
-            myArticle.appendChild(publisher);
-            myArticle.appendChild(publishedDate);
-            myArticle.appendChild(pages);
-            myArticle.appendChild(averageRating);
-            myArticle.appendChild(price);
-    
-            section.appendChild(myArticle);
-          } 
-        }
-    }
-  </script>
-
+  <script src=books.js></script>
+  <script src=hplist.js></script>
+  <script src='https://www.googleapis.com/books/v1/volumes?q=harrypotter+inauthor:rowling&callback=handleResponse'></script>
+ 
 </body>
 </html>

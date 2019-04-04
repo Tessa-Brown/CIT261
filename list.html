@@ -1,3 +1,17 @@
+<div class="small-container">
+      <h1>Books To Read:</h1>
+
+      <form>
+  <input id="item" type="text" placeholder="Book Name" />
+</form>
+
+<h2>To Be Read</h2>
+<ul></ul>
+
+<button>Clear All</button>
+</div>
+
+<script>
 const form = document.querySelector('form')
 const ul = document.querySelector('ul')
 const button = document.querySelector('button')
@@ -32,3 +46,4 @@ button.addEventListener('click', function() {
     ul.removeChild(ul.firstChild)
   }
 })
+</script>
