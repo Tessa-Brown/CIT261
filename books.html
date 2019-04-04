@@ -26,7 +26,7 @@
 
          function showBooks(jsonData) {
 
-            var books = jsonData['items'];
+            var books = jsonData[];
     
             for(var i = 0; i < 11; i++) {
 
@@ -39,13 +39,13 @@
             var averageRating = document.createElement('p');
             var price = document.createElement('p');
 
-            title.textContent = books[i].title;
-            authors.textContent = books[i].authors;
-            publisher.textContent = books[i].publisher;
-            publishedDate.textContent = books[i].publishedDate;
-            pages.textContent = books[i].pages;
-            averageRating.textContent = books[i].averageRating;
-            price.textContent = books[i].retailPrice;
+            title.textContent = books.items[i].volumeInfo.title;
+            authors.textContent = books.items[i].volumeInfo.authors;
+            publisher.textContent = books.items[i].volumeInfo.publisher;
+            publishedDate.textContent = books.items[i].volumeInfo.publishedDate;
+            pages.textContent = books.items[i].volumeInfo.pages;
+            averageRating.textContent = books.items[i].volumeInfo.averageRating;
+            price.textContent = books.items[i].volumeInfo.retailPrice;
             
         
             myArticle.appendChild(title);
