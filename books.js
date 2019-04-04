@@ -6,10 +6,15 @@
         request.responseType = 'json';
         request.send();
         request.onload = function() {
-          var books = request.response;
-         console.log(books);
+          var data = request.response;
+         showBooks(data);
+        }
 
-         for(var i = 0; i < 10; i++) {
+
+         function showBooks(jsonData) {
+            var books = jsonData['items'];
+         
+            for(var i = 0; i < 10; i++) {
             var myArticle = document.createElement('article');
             var title = document.createElement('h2');
             var authors = document.createElement('p');
@@ -40,5 +45,6 @@
           } 
         }
     }
+
 
     
