@@ -10,7 +10,7 @@
   
 
   <script>
-function getBooks() { 
+    function getBooks() { 
         var section = document.querySelector('.content');
         var search = document.getElementById('search').innerHTML;
         var request = new XMLHttpRequest();
@@ -25,10 +25,10 @@ function getBooks() {
 
 
          function showBooks(jsonData) {
-            
+
             var books = jsonData['items'];
-         
-            for(var i = 0; i < 10; i++) {
+    
+            for(var i = 0; i < 11; i++) {
 
             var myArticle = document.createElement('article');
             var title = document.createElement('h2');
