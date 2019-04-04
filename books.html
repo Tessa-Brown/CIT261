@@ -19,16 +19,13 @@
         request.responseType = 'json';
         request.send();
         request.onload = function() {
-          var books = request.response;
-         showBooks(books);
+          var data = request.response;
+          showBooks(data)
         }
 
-
-         function showBooks(jsonData) {
-
-            var data = jsonData['items'];
-    
-            for(var i = 0; i < 11; i++) {
+           function showBooks(jsonData) { 
+            var books = jsonData['items'];
+            for(var i = 0; i < 10; i++) {
 
             var myArticle = document.createElement('article');
             var title = document.createElement('h2');
@@ -39,13 +36,13 @@
             var averageRating = document.createElement('p');
             var price = document.createElement('p');
 
-            title.textContent = data.items[i].volumeInfo.title;
-            authors.textContent = data.items[i].volumeInfo.authors;
-            publisher.textContent = data.items[i].volumeInfo.publisher;
-            publishedDate.textContent = data.items[i].volumeInfo.publishedDate;
-            pages.textContent = data.items[i].volumeInfo.pages;
-            averageRating.textContent = data.items[i].volumeInfo.averageRating;
-            price.textContent = data.items[i].volumeInfo.retailPrice;
+            title.textContent = books[i].volumeInfo.title;
+            authors.textContent = books[i].volumeInfo.authors;
+            publisher.textContent = books[i].volumeInfo.publisher;
+            publishedDate.textContent = books[i].volumeInfo.publishedDate;
+            pages.textContent = books[i].volumeInfo.pages;
+            averageRating.textContent = books[i].volumeInfo.averageRating;
+            price.textContent = books[i].volumeInfo.retailPrice;
             
         
             myArticle.appendChild(title);
