@@ -10,8 +10,7 @@
   
 
   <script>
-
-      function getBooks() { 
+function getBooks() { 
         var search = document.getElementById('search').innerHTML;
         var requestURL = "https://www.googleapis.com/books/v1/volumes?q=" + search + "&callback=handleResponse";
         var request = new XMLHttpRequest();
@@ -19,9 +18,15 @@
         request.responseType = 'json';
         request.send();
         request.onload = function() {
-          var books = request.response;
-          console.log(books);
+          var data = request.response;
+         showBooks(data);
+        }
 
+
+         function showBooks(jsonData) {
+            var books = jsonData['volumeInfo'];
+         
+            for(var i = 0; i < 10; i++) {
             var myArticle = document.createElement('article');
             var title = document.createElement('h2');
             var authors = document.createElement('p');
@@ -51,6 +56,8 @@
             section.appendChild(myArticle);
           } 
         }
+    }
+
     
     
   </script>

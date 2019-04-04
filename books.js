@@ -6,13 +6,10 @@
         request.responseType = 'json';
         request.send();
         request.onload = function() {
-          var data = request.response;
-          getBooks(data);
-        }
-       
-            function getBooks(jsonData) {
-            var books = jsonData['volumeInfo'];
+          var books = request.response;
+         console.log(books);
 
+         for(var i = 0; i < 10; i++) {
             var myArticle = document.createElement('article');
             var title = document.createElement('h2');
             var authors = document.createElement('p');
@@ -42,4 +39,6 @@
             section.appendChild(myArticle);
           } 
         }
+    }
+
     
