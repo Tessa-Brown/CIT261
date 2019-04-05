@@ -1,0 +1,45 @@
+<html>
+  <head>
+    <title>Harry Potter List</title>
+    <link rel="stylesheet" href="animations.css">
+  </head>
+  <body>
+        <img id="book1" src="book.png">
+   <div class="hello"><h1>Below is a list of Harry Potter Books by JK Rowling!</h1>
+   <h2>Make a list of the ones you still need to read!</h2></div>
+   
+  
+   
+   <div class="small-container">
+        <h3 id="books">Books To Read:</h3>
+        <p id="lists">Hit Enter Key to Submit</p>
+        <form>
+    <input id="item" type="text">
+        </form>
+
+  <ul></ul>
+  
+  <button id="clear">Clear All</button>
+  </div><br><br>
+
+  <button type="button" id="text"
+  onclick="document.getElementById('content').style.fontSize = '2rem'">
+  Make text larger</button> 
+  <button type="button" id="text"
+  onclick="document.getElementById('content').style.fontSize = '1rem'">
+  Make text original size</button>
+  <button type="button" id="text"
+  onclick="document.getElementById('content').style.visibility = 'hidden'">
+  Hide Book Information</button> 
+  <button type="button" id="text"
+  onclick="document.getElementById('content').style.visibility = 'visible'">
+  Show Book Information</button>
+    <div id="content"></div>
+   
+
+  <script src=books.js></script>
+  <script src=books2.js></script>
+  <script> handleResponse('https://www.googleapis.com/books/v1/volumes?q=harrypotter+inauthor:rowling&callback=handleResponse');</script>
+ 
+</body>
+</html>
